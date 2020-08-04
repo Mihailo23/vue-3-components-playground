@@ -1,6 +1,6 @@
 <template>
   <div class="container text-center">
-    <dancing-letters text="Mihailo" duration="2" size="2rem" move="2em" />
+    <dancing-letters text="Mihailo" duration="2" size="4rem" move=".5em" />
     <p>
       Inspiration:
       <a
