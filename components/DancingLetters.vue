@@ -1,5 +1,10 @@
 <template>
-  <h1 class="message">
+  <!-- Dancing Letters Component -->
+  <!-- Heavily inspired by https://codepen.io/jh3y/pen/OJMOmRL -->
+  <h1
+    class="message"
+    :style="`--count: ${letters.length}; --duration: ${duration}s; --size: ${size}`"
+  >
     <span
       v-for="(letter, index) in letters"
       :key="index"
@@ -18,10 +23,18 @@ export default {
       type: String,
       default: 'Mihailo',
     },
+    duration: {
+      type: String || Number,
+      default: '2',
+    },
+    size: {
+      type: String || Number,
+      default: '1rem',
+    },
   },
   computed: {
     letters() {
-      return this.text.split('')
+      return Array.from(this.text)
     },
   },
 }
@@ -31,7 +44,7 @@ export default {
   --move: 50px;
 }
 .message {
-  font-size: 3rem;
+  font-size: var(--size);
   font-family: 'Roboto Mono', monospace;
   margin-bottom: var(--move);
 }
@@ -41,17 +54,19 @@ export default {
   color: hsl(var(--hue), 20%, 65%);
   font-variation-settings: 'wght' 200;
   transition: all 0.25s ease;
-  animation: breathe 2.5s infinite;
-  animation-delay: calc(60ms * var(--index));
+  animation: breathe var(--duration) infinite;
+  animation-delay: calc(var(--duration) / var(--count) * var(--index));
+  min-width: 0.25em;
 }
 
 .message span::after {
   content: attr(data-letter);
   display: block;
   position: absolute;
-  top: 0.25rem;
-  left: 0.25rem;
+  top: 0.25em;
+  left: 0.25em;
   opacity: 0.5;
+  font-size: 0.75em;
 }
 
 @keyframes breathe {

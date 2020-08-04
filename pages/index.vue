@@ -1,6 +1,15 @@
 <template>
-  <div class="container">
-    <dancing-letters text="Mihailo" />
+  <div class="container text-center">
+    <dancing-letters text="Mihailo je doktor" duration="2" size="80px" />
+    <p>
+      Inspiration:
+      <a
+        target="_blank"
+        class="text-red-600"
+        href="https://codepen.io/jh3y/pen/OJMOmRL"
+        >this pen</a
+      >
+    </p>
   </div>
 </template>
 
@@ -13,10 +22,4 @@ export default {
 }
 </script>
 
-<style>
-/* Sample `apply` at-rules with Tailwind CSS
-*/
-.container {
-  @apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-</style>
+<style></style>
