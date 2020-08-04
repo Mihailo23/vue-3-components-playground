@@ -3,7 +3,7 @@
   <!-- Heavily inspired by https://codepen.io/jh3y/pen/OJMOmRL -->
   <h1
     class="message"
-    :style="`--count: ${letters.length}; --duration: ${duration}s; --size: ${size}`"
+    :style="`--count: ${letters.length}; --duration: ${duration}s; --size: ${size}; --move: ${move}`"
   >
     <span
       v-for="(letter, index) in letters"
@@ -29,7 +29,11 @@ export default {
     },
     size: {
       type: String || Number,
-      default: '1rem',
+      default: '1em',
+    },
+    move: {
+      type: String || Number,
+      default: '1em',
     },
   },
   computed: {
@@ -40,9 +44,6 @@ export default {
 }
 </script>
 <style>
-:root {
-  --move: 50px;
-}
 .message {
   font-size: var(--size);
   font-family: 'Roboto Mono', monospace;
