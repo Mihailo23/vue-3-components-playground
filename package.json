@@ -12,7 +12,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "nuxt": "^2.14.0"
+    "nuxt": "^3.0.0"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^3.1.0",
@@ -28,6 +28,6 @@
     "eslint-plugin-prettier": "^3.1.4",
     "jest": "^26.1.0",
     "prettier": "^2.0.5",
-    "vue-jest": "^3.0.4"
+    "vue-jest": "^4.0.1"
   }
 }
